@@ -40,7 +40,7 @@ class BEVNetKittiTask(BEVNetTask):
             gt_angle = gt_batch['camera_angle'][index].item() / np.pi * 180
             titles = [
                 # input
-                f'input, map loss={loss:.2e}\n'
+                f'input, map loss={loss:.2e}\n',
                 # gt
                 f'g.t. camera height={gt_height:.2e}m\n'
                 f'camera angle={gt_angle:.2e}',
