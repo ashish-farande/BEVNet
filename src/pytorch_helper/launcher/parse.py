@@ -100,7 +100,7 @@ class MainArg:
             'Option File arguments', 'Specify path to option files'
         )
         group.add_argument(
-            '--task-option-file', type=str, required=True,
+            '--task-option-file', default='/srip-vol/workspace/BEVNet/configs/bevnet_kitti/mixed-all-kitti.yaml', type=str, required=False,
             help='Path to the file of training options'
         )
         group.add_argument(

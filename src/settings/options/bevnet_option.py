@@ -97,7 +97,8 @@ class BEVNetOption(ModelOption):
     def build(self):
         net_head, _ = self.optional_build(self.head_branch_option)
         net_feet, _ = self.optional_build(self.feet_branch_option)
-        net_pose, _ = self.pose_branch_option.build()
+        net_pose, _ = self.optional_build(self.pose_branch_option)
+
         shared_encoder = self.share_encoder_option.build()
 
         net_kwargs = dict(
@@ -114,6 +115,8 @@ class BEVNetOption(ModelOption):
             del net_kwargs['head_heights']
         if self.ref == 'BEVNetNoAttention':
             del net_kwargs['head_heights']
+        if self.ref == 'BEVNetKitti':
+            del net_kwargs['pose_branch']
 
         model = Spaces.build(Spaces.NAME.MODEL, self.ref, net_kwargs)
         logger.info(f'Build {type(model).__name__}')
