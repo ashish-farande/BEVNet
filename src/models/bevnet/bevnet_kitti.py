@@ -12,7 +12,7 @@ from pytorch_helper.settings.spaces import Spaces
 @Spaces.register(Spaces.NAME.MODEL, 'BEVNetKitti')
 class BEVNetKitti(BEVNetBase):
 
-    def __init__(self, head_branch, feet_branch, pose_branch=None,
+    def __init__(self, head_branch, feet_branch, pose_branch,
                  shared_encoder=None, branches_share_encoder=(),
                  magnitude_scale=100, head_heights=()
                  ):
@@ -32,7 +32,7 @@ class BEVNetKitti(BEVNetBase):
             in_channels_head, in_channels_feet, magnitude_scale
         )
 
-        super(BEVNet, self).__init__(
+        super(BEVNetKitti, self).__init__(
             head_branch=head_branch,
             feet_branch=feet_branch,
             pose_branch=pose_branch, # We need to remove the Pose Branch

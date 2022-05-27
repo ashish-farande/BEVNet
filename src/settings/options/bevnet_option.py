@@ -115,8 +115,7 @@ class BEVNetOption(ModelOption):
             del net_kwargs['head_heights']
         if self.ref == 'BEVNetNoAttention':
             del net_kwargs['head_heights']
-        if self.ref == 'BEVNetKitti':
-            del net_kwargs['pose_branch']
+
 
         model = Spaces.build(Spaces.NAME.MODEL, self.ref, net_kwargs)
         logger.info(f'Build {type(model).__name__}')

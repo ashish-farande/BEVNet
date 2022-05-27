@@ -9,7 +9,7 @@ from pytorch_helper.settings.spaces import Spaces
 @Spaces.register(Spaces.NAME.LOSS_FN, 'BEVLossKitti')
 class BEVLossKitti(nn.Module):
     def __init__(self, magnitude_scale, loss_weights):
-        super(BEVLoss, self).__init__()
+        super(BEVLossKitti, self).__init__()
         self.magnitude_scale = magnitude_scale
         self.loss_weights = loss_weights
 

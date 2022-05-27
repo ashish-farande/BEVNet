@@ -1,5 +1,5 @@
 name: BEVNet-base-kitti
-ref: BEVNetTask
+ref: BEVNetKittiTask
 datetime: null
 notes: a base configuration for BEVNet-Kitti
 src_folder: src
@@ -31,7 +31,7 @@ dataloader:
         num_workers: 8
         pin_memory: true
 model:
-    ref: BEVNet-Kitti
+    ref: BEVNetKitti
     pth_path:
     kwargs:
         head_branch_option:
